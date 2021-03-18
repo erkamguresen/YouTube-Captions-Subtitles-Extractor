@@ -17,3 +17,20 @@ for (i=0; i<frames.length && (s==null || s==''); i++) s = se(frames[i].document)
 if (!s || s=='') s = prompt('Enter%20search%20terms%20for%20Wikipedia',''); 
 open('https://en.wikipedia.org' + (s ? '/w/index.php?title=Special:Search&search=' + encodeURIComponent(s) : '')).focus();
 })();">Wiki Search Page</a> (Drag to bookmark bar)
+
+-
+
+- like subtitles
+- arrange them in groups and keep them on the screen until the next one is available.
+- maybe anomaly detection | tree cluster based on closeness of the time stamp
+- use pauses between words to differentiate the sentences.
+
+- use them as [Bookmarklet-wiki](https://en.wikipedia.org/wiki/Bookmarklet)
+
+- this can be used in youtube video as subtitles
+- @feature: organize into centances by using std or tree clustering method to combine each word into readable subtitle
+- @feature: divide web page into 2 and on the left open the subtitle
+- @feature: divide web page into 3: one left yuotube and 2 inthe right. upper is the text and in the buttom is the translation of the subtitle.
+- @feature: signature to "@author" find a text handwriting and link to repository
+
+- Check auto google translate code of this [website](https://bestsale.be/index.php?route=product/manufacturer)
