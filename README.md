@@ -2,6 +2,8 @@
 
 This is a small Bookmarklet that extracts captions from a Youtube Video (if exists) and opens a panel on the right side of the page to display all the captions.
 
+This project is inspired from the youtuber techlead ([techlead youtube video](https://www.youtube.com/watch?v=r7SO-Oq3d5E)) and created for personal needs.
+
 ## Bookmarklet
 
 [Bookmarklet-wiki](https://en.wikipedia.org/wiki/Bookmarklet):
@@ -24,8 +26,6 @@ open('https://en.wikipedia.org' + (s ? '/w/index.php?title=Special:Search&search
 - arrange them in groups and keep them on the screen until the next one is available.
 - maybe anomaly detection | tree cluster based on closeness of the time stamp
 - use pauses between words to differentiate the sentences.
-
-- use them as [Bookmarklet-wiki](https://en.wikipedia.org/wiki/Bookmarklet)
 
 - this can be used in youtube video as subtitles
 - @feature: organize into centances by using std or tree clustering method to combine each word into readable subtitle
