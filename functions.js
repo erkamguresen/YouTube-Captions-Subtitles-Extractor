@@ -106,3 +106,12 @@ const createdPerson2 = (name, age, gender) => ({
 });
 
 console.log(createdPerson2("Zodiac Hasbro", 56, "male"));
+
+/*
+//To move/re-place an HTML element:
+
+<div id="target">1</div>
+<span id="to_be_moved">-2</span>
+
+document.getElementById('target').appendChild(  document.getElementById('to_be_moved') );
+*/
