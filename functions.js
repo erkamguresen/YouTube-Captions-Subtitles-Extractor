@@ -7,7 +7,7 @@ function dividedWindow() {
     asideDiv = document.createElement("div");
     asideDiv.className = "asideDiv";
 
-    //create 2 divs' within the aside div
+    //create 2 divs within the aside div
     let newDiv = document.createElement("div");
     newDiv.className = "asideDiv upperAsideDiv";
 
@@ -65,7 +65,8 @@ function dividedWindowWithIFrame() {
 
   // check if the div exists
   if (asideDiv.length === 0) {
-    const originalPage = document.getElementsByTagName("body");
+    const originalPage = document.querySelector("body");
+
     document.documentElement.removeChild(originalPage);
 
     //create main panel and put an Iframe in it
