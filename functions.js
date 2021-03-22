@@ -64,6 +64,16 @@ function dividedWindowWithIFrame() {
   // check if the div exists
   if (asideDiv.length === 0) {
     //create main panel and put an Iframe in it
+    let newBody = document.createElement("body");
+    let mainPanel = document.createElement("main");
+    let iFrame = document.createElement("iframe");
+
+    let originalPage = document.getElementsByTagName("body");
+    iFrame.appendChild(originalPage);
+    mainPanel.appendChild(iFrame);
+    newBody.appendChild(mainPanel);
+
+    document.html.appendChild(newBody);
 
     //create aside div
     asideDiv = document.createElement("div");
