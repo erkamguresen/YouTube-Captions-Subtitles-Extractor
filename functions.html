@@ -94,7 +94,7 @@
           const url = window.location.href;
 
           let asideDiv = document.getElementsByClassName("asideDiv");
-/*why*/
+
 if (asideDiv.length === 0) {
   const originalPage = document.querySelector("body");
 
@@ -139,23 +139,26 @@ if (asideDiv.length === 0) {
 
   asideDiv.appendChild(lowerDiv);
 
-  
-  asideDiv.style.cssText = "height:100%;" + "border: 2px solid red";
+
+  let body = document.body;
+  body.style.cssText =
+  "margin: auto;"+
+    "width:98%;" +
+    "height:95vh;" +
+    "border: 2px solid yellowgreen;" +
+    "padding:10px;" +
+    "display:grid; " +
+    "grid-template-columns:2fr 1fr";
 
   lowerDiv.style.cssText = "height:50%; border:2px solid green";
 
   document.getElementById("asideUpper").style.cssText =
     "height:50%;" + "border:2px solid blue";
 
-  
-  let body = document.body;
-  body.style.cssText =
-    "width:100%;" +
-    
-    "border: 2px solid yellowgreen;" +
-    "padding:10px;" +
-    "display:grid; " +
-    "grid-template-columns:2fr 1fr";
+  mainPanel.style.cssText = "display:flex !important";
+
+  iFrame.style.cssText = "width:100% !important";
+
 
  
   alert("3 window will be initiated");

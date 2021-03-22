@@ -59,80 +59,76 @@ function dividedWindow() {
 }
 
 function dividedWindowWithIFrame() {
-  const url = window.location.href;
+  const originalPage = document.querySelector("body");
 
-  let asideDiv = document.getElementsByClassName("asideDiv");
+  document.documentElement.removeChild(originalPage);
 
-  // check if the div exists
-  if (asideDiv.length === 0) {
-    const originalPage = document.querySelector("body");
+  let newBody = document.createElement("body");
+  document.documentElement.appendChild(newBody);
 
-    document.documentElement.removeChild(originalPage);
+  let mainPanel = document.createElement("main");
+  newBody.appendChild(mainPanel);
 
-    //create main panel and put an Iframe in it
-    let newBody = document.createElement("body");
-    document.documentElement.appendChild(newBody);
+  let iFrame = document.createElement("IFRAME");
+  iFrame.setAttribute("src", url);
+  mainPanel.appendChild(iFrame);
 
-    let mainPanel = document.createElement("main");
-    newBody.appendChild(mainPanel);
+  
+  asideDiv = document.createElement("div");
+  asideDiv.className = "asideDiv";
 
-    let iFrame = document.createElement("IFRAME");
-    iFrame.setAttribute("src", url);
-    mainPanel.appendChild(iFrame);
+  
+  document.body.appendChild(asideDiv);
 
-    //create aside div
-    asideDiv = document.createElement("div");
-    asideDiv.className = "asideDiv";
+  
+  let upperDiv = document.createElement("div");
+  upperDiv.className = "asideDiv upperAsideDiv";
 
-    //append to the body element
-    document.body.appendChild(asideDiv);
+  let tag = document.createElement("h1");
+  let text = document.createTextNode("this is the first part");
+  tag.appendChild(text);
+  upperDiv.appendChild(tag);
+  upperDiv.setAttribute("id", "asideUpper");
 
-    //create 2 divs within the aside div
-    let upperDiv = document.createElement("div");
-    upperDiv.className = "asideDiv upperAsideDiv";
+  asideDiv.appendChild(upperDiv);
 
-    let tag = document.createElement("h1");
-    let text = document.createTextNode("this is the first part");
-    tag.appendChild(text);
-    upperDiv.appendChild(tag);
-    upperDiv.setAttribute("id", "asideUpper");
+  let lowerDiv = document.createElement("div");
+  lowerDiv.className = "asideDiv lowerAsideDiv";
 
-    asideDiv.appendChild(upperDiv);
+  tag = document.createElement("h1");
+  text = document.createTextNode("this is the second part");
+  tag.appendChild(text);
+  lowerDiv.appendChild(tag);
 
-    let lowerDiv = document.createElement("div");
-    lowerDiv.className = "asideDiv lowerAsideDiv";
+  asideDiv.appendChild(lowerDiv);
 
-    tag = document.createElement("h1");
-    text = document.createTextNode("this is the second part");
-    tag.appendChild(text);
-    lowerDiv.appendChild(tag);
 
-    asideDiv.appendChild(lowerDiv);
+  let body = document.body;
+  body.style.cssText =
+  "margin: auto;"+
+    "width:98%;" +
+    "height:95vh;" +
+    "border: 2px solid yellowgreen;" +
+    "padding:10px;" +
+    "display:grid; " +
+    "grid-template-columns:2fr 1fr";
 
-    //style with borders
-    asideDiv.style.cssText = "height:100%;" + "border: 2px solid red";
+  lowerDiv.style.cssText = "height:50%; border:2px solid green";
 
-    lowerDiv.style.cssText = "height:50%; border:2px solid green";
+  document.getElementById("asideUpper").style.cssText =
+    "height:50%;" + "border:2px solid blue";
 
-    document.getElementById("asideUpper").style.cssText =
-      "height:50%;" + "border:2px solid blue";
+  mainPanel.style.cssText = "display:flex !important";
 
-    // make grid 2fr 1 fr
-    let body = document.body;
-    body.style.cssText =
-      "width:100%;" +
-      // "height:100vh;" +
-      "border: 2px solid yellowgreen;" +
-      "padding:10px;" +
-      "display:grid; " +
-      "grid-template-columns:2fr 1fr";
+  iFrame.style.cssText = "width:100% !important";
 
-    //alert
-    alert("3 window will be initiated");
-  } else {
-    //alert
-    alert("3 window is already exists");
-  }
+
+ 
+  alert("3 window will be initiated");
+} else {
+ 
+  alert("3 window is already exists");
+}
 }
 
 /*
