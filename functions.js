@@ -1,9 +1,3 @@
-function ourReusableFunction() {
-  console.log("Hey World!");
-}
-
-ourReusableFunction();
-
 function dividedWindow() {
   var asideDiv = document.getElementsByClassName("asideDiv");
 
@@ -61,51 +55,6 @@ function dividedWindow() {
     alert("3 window is already exists");
   }
 }
-
-function caseInSwitch(value) {
-  var returnVar = "";
-  switch (value) {
-    case 1:
-      returnVar = "alpha";
-      break;
-    case 2:
-      returnVar = "beta";
-      break;
-    case 3:
-      returnVar = "gamma";
-      break;
-    case 4:
-      returnVar = "delta";
-      break;
-    default:
-      returnVar = "theta";
-      break;
-  }
-
-  return returnVar;
-}
-
-console.log(caseInSwitch(4));
-
-//long way
-const createdPerson = (name, age, gender) => {
-  return {
-    name: name,
-    age: age,
-    gender: gender,
-  };
-};
-
-console.log(createdPerson("Zodiac Hasbro", 56, "male"));
-
-//short way
-const createdPerson2 = (name, age, gender) => ({
-  name,
-  age,
-  gender,
-});
-
-console.log(createdPerson2("Zodiac Hasbro", 56, "male"));
 
 /*
 //To move/re-place an HTML element:
