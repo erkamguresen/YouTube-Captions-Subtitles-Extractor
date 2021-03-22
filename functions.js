@@ -63,76 +63,70 @@ function dividedWindowWithIFrame() {
 
   let asideDiv = document.getElementsByClassName("asideDiv");
 
-if (asideDiv.length === 0) {
-const originalPage = document.querySelector("body");
+  if (asideDiv.length === 0) {
+    const originalPage = document.querySelector("body");
 
-document.documentElement.removeChild(originalPage);
+    document.documentElement.removeChild(originalPage);
 
-let newBody = document.createElement("body");
-document.documentElement.appendChild(newBody);
+    let newBody = document.createElement("body");
+    document.documentElement.appendChild(newBody);
 
-let mainPanel = document.createElement("main");
-newBody.appendChild(mainPanel);
+    let mainPanel = document.createElement("main");
+    newBody.appendChild(mainPanel);
 
-let iFrame = document.createElement("IFRAME");
-iFrame.setAttribute("src", url);
-mainPanel.appendChild(iFrame);
+    let iFrame = document.createElement("IFRAME");
+    iFrame.setAttribute("src", url);
+    mainPanel.appendChild(iFrame);
 
+    asideDiv = document.createElement("div");
+    asideDiv.className = "asideDiv";
 
-asideDiv = document.createElement("div");
-asideDiv.className = "asideDiv";
+    document.body.appendChild(asideDiv);
 
+    let upperDiv = document.createElement("div");
+    upperDiv.className = "asideDiv upperAsideDiv";
 
-document.body.appendChild(asideDiv);
+    let tag = document.createElement("h1");
+    let text = document.createTextNode("this is the first part");
+    tag.appendChild(text);
+    upperDiv.appendChild(tag);
+    upperDiv.setAttribute("id", "asideUpper");
 
+    asideDiv.appendChild(upperDiv);
 
-let upperDiv = document.createElement("div");
-upperDiv.className = "asideDiv upperAsideDiv";
+    let lowerDiv = document.createElement("div");
+    lowerDiv.className = "asideDiv lowerAsideDiv";
 
-let tag = document.createElement("h1");
-let text = document.createTextNode("this is the first part");
-tag.appendChild(text);
-upperDiv.appendChild(tag);
-upperDiv.setAttribute("id", "asideUpper");
+    tag = document.createElement("h1");
+    text = document.createTextNode("this is the second part");
+    tag.appendChild(text);
+    lowerDiv.appendChild(tag);
 
-asideDiv.appendChild(upperDiv);
+    asideDiv.appendChild(lowerDiv);
 
-let lowerDiv = document.createElement("div");
-lowerDiv.className = "asideDiv lowerAsideDiv";
+    let body = document.body;
+    body.style.cssText =
+      "margin: auto;" +
+      "width:98%;" +
+      "height:95vh;" +
+      "border: 2px solid yellowgreen;" +
+      "padding:10px;" +
+      "display:grid; " +
+      "grid-template-columns:2fr 1fr";
 
-tag = document.createElement("h1");
-text = document.createTextNode("this is the second part");
-tag.appendChild(text);
-lowerDiv.appendChild(tag);
+    lowerDiv.style.cssText = "height:50%; border:2px solid green";
 
-asideDiv.appendChild(lowerDiv);
+    document.getElementById("asideUpper").style.cssText =
+      "height:50%;" + "border:2px solid blue";
 
+    mainPanel.style.cssText = "display:flex !important";
 
-let body = document.body;
-body.style.cssText =
-"margin: auto;"+
-"width:98%;" +
-"height:95vh;" +
-"border: 2px solid yellowgreen;" +
-"padding:10px;" +
-"display:grid; " +
-"grid-template-columns:2fr 1fr";
+    iFrame.style.cssText = "width:100% !important";
 
-lowerDiv.style.cssText = "height:50%; border:2px solid green";
-
-document.getElementById("asideUpper").style.cssText =
-"height:50%;" + "border:2px solid blue";
-
-mainPanel.style.cssText = "display:flex !important";
-
-iFrame.style.cssText = "width:100% !important";
-
-
-
-alert("3 window will be initiated");
-} else {
-
-alert("3 window is already exists");
+    alert("3 window will be initiated");
+  } else {
+    alert("3 window is already exists");
+  }
 }
 
 /*
