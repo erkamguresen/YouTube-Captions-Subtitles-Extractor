@@ -59,76 +59,80 @@ function dividedWindow() {
 }
 
 function dividedWindowWithIFrame() {
-  const originalPage = document.querySelector("body");
+  const url = window.location.href;
 
-  document.documentElement.removeChild(originalPage);
+  let asideDiv = document.getElementsByClassName("asideDiv");
 
-  let newBody = document.createElement("body");
-  document.documentElement.appendChild(newBody);
+if (asideDiv.length === 0) {
+const originalPage = document.querySelector("body");
 
-  let mainPanel = document.createElement("main");
-  newBody.appendChild(mainPanel);
+document.documentElement.removeChild(originalPage);
 
-  let iFrame = document.createElement("IFRAME");
-  iFrame.setAttribute("src", url);
-  mainPanel.appendChild(iFrame);
+let newBody = document.createElement("body");
+document.documentElement.appendChild(newBody);
 
-  
-  asideDiv = document.createElement("div");
-  asideDiv.className = "asideDiv";
+let mainPanel = document.createElement("main");
+newBody.appendChild(mainPanel);
 
-  
-  document.body.appendChild(asideDiv);
-
-  
-  let upperDiv = document.createElement("div");
-  upperDiv.className = "asideDiv upperAsideDiv";
-
-  let tag = document.createElement("h1");
-  let text = document.createTextNode("this is the first part");
-  tag.appendChild(text);
-  upperDiv.appendChild(tag);
-  upperDiv.setAttribute("id", "asideUpper");
-
-  asideDiv.appendChild(upperDiv);
-
-  let lowerDiv = document.createElement("div");
-  lowerDiv.className = "asideDiv lowerAsideDiv";
-
-  tag = document.createElement("h1");
-  text = document.createTextNode("this is the second part");
-  tag.appendChild(text);
-  lowerDiv.appendChild(tag);
-
-  asideDiv.appendChild(lowerDiv);
+let iFrame = document.createElement("IFRAME");
+iFrame.setAttribute("src", url);
+mainPanel.appendChild(iFrame);
 
 
-  let body = document.body;
-  body.style.cssText =
-  "margin: auto;"+
-    "width:98%;" +
-    "height:95vh;" +
-    "border: 2px solid yellowgreen;" +
-    "padding:10px;" +
-    "display:grid; " +
-    "grid-template-columns:2fr 1fr";
-
-  lowerDiv.style.cssText = "height:50%; border:2px solid green";
-
-  document.getElementById("asideUpper").style.cssText =
-    "height:50%;" + "border:2px solid blue";
-
-  mainPanel.style.cssText = "display:flex !important";
-
-  iFrame.style.cssText = "width:100% !important";
+asideDiv = document.createElement("div");
+asideDiv.className = "asideDiv";
 
 
- 
-  alert("3 window will be initiated");
+document.body.appendChild(asideDiv);
+
+
+let upperDiv = document.createElement("div");
+upperDiv.className = "asideDiv upperAsideDiv";
+
+let tag = document.createElement("h1");
+let text = document.createTextNode("this is the first part");
+tag.appendChild(text);
+upperDiv.appendChild(tag);
+upperDiv.setAttribute("id", "asideUpper");
+
+asideDiv.appendChild(upperDiv);
+
+let lowerDiv = document.createElement("div");
+lowerDiv.className = "asideDiv lowerAsideDiv";
+
+tag = document.createElement("h1");
+text = document.createTextNode("this is the second part");
+tag.appendChild(text);
+lowerDiv.appendChild(tag);
+
+asideDiv.appendChild(lowerDiv);
+
+
+let body = document.body;
+body.style.cssText =
+"margin: auto;"+
+"width:98%;" +
+"height:95vh;" +
+"border: 2px solid yellowgreen;" +
+"padding:10px;" +
+"display:grid; " +
+"grid-template-columns:2fr 1fr";
+
+lowerDiv.style.cssText = "height:50%; border:2px solid green";
+
+document.getElementById("asideUpper").style.cssText =
+"height:50%;" + "border:2px solid blue";
+
+mainPanel.style.cssText = "display:flex !important";
+
+iFrame.style.cssText = "width:100% !important";
+
+
+
+alert("3 window will be initiated");
 } else {
- 
-  alert("3 window is already exists");
-}
+
+alert("3 window is already exists");
 }
 
 /*
