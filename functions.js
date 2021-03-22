@@ -59,27 +59,34 @@ function dividedWindow() {
 }
 
 function dividedWindowWithIFrame() {
+  const url = window.location.href;
+
   let asideDiv = document.getElementsByClassName("asideDiv");
 
   // check if the div exists
   if (asideDiv.length === 0) {
+    const originalPage = document.getElementsByTagName("body");
+    document.documentElement.removeChild(originalPage);
+
     //create main panel and put an Iframe in it
     let newBody = document.createElement("body");
-    let mainPanel = document.createElement("main");
-    let iFrame = document.createElement("iframe");
+    document.documentElement.appendChild(newBody);
 
-    let originalPage = document.getElementsByTagName("body");
-    iFrame.appendChild(originalPage);
-    mainPanel.appendChild(iFrame);
+    let mainPanel = document.createElement("main");
     newBody.appendChild(mainPanel);
 
-    document.html.appendChild(newBody);
+    let iFrame = document.createElement("IFRAME");
+    iFrame.setAttribute("src", url);
+    mainPanel.appendChild(iFrame);
 
     //create aside div
     asideDiv = document.createElement("div");
     asideDiv.className = "asideDiv";
 
-    //create 2 divs' within the aside div
+    //append to the body element
+    document.body.appendChild(asideDiv);
+
+    //create 2 divs within the aside div
     let upperDiv = document.createElement("div");
     upperDiv.className = "asideDiv upperAsideDiv";
 
@@ -101,9 +108,6 @@ function dividedWindowWithIFrame() {
 
     asideDiv.appendChild(lowerDiv);
 
-    //append to the body element
-    document.body.appendChild(asideDiv);
-
     //style with borders
     asideDiv.style.cssText = "height:100%;" + "border: 2px solid red";
 
@@ -116,7 +120,7 @@ function dividedWindowWithIFrame() {
     let body = document.body;
     body.style.cssText =
       "width:100%;" +
-      "height:100vh;" +
+      // "height:100vh;" +
       "border: 2px solid yellowgreen;" +
       "padding:10px;" +
       "display:grid; " +
