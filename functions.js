@@ -166,3 +166,22 @@ function getSubTitle() {
       encodeURIComponent(url)
   );
 }
+
+/*
+A method to teg an element inside an iFrame
+*/
+//www.w3schools.com/jsref/prop_frame_contentdocument.asp
+
+//cross browser versions
+https: function myFunction() {
+  var x = document.getElementById("myframe");
+  var y = x.contentWindow || x.contentDocument;
+  if (y.document) y = y.document;
+  y.body.style.backgroundColor = "red";
+}
+
+function myFunction2() {
+  var x = document.getElementById("myframe");
+  var y = x.contentDocument;
+  y.body.style.backgroundColor = "red";
+}
