@@ -4,6 +4,22 @@ This is a small Bookmarklet that extracts captions from a Youtube Video (if exis
 
 This project is inspired from the youtuber techlead ([techlead youtube video](https://www.youtube.com/watch?v=r7SO-Oq3d5E)) and created for personal needs.
 
+## Additional Data on website:
+
+[medium article details](https://medium.com/@cafraser/how-to-download-public-youtube-captions-in-xml-b4041a0f9352)
+{ "baseUrl": <a URL that starts with https://www.youtube.com/api/timedtext>,
+"name": <how the subtitle is described on youtube>,
+"vssId": <describes the type and language of captions: English captions are ".en", auto-generated English captions are "a.en">,
+"languageCode": <"en" for English>,
+"kind": <"asr" for auto-generated, "standard" for normal>,
+"isTranslatable": <true|false> }
+
+-For available languages
+https://www.youtube.com/api/timedtext?v={$videoID}&type=list
+
+-And working versions
+http://video.google.com/timedtext?v={$videoID}&lang={$lang_code}&name={$name}
+
 ## Bookmarklet
 
 [Bookmarklet-wiki](https://en.wikipedia.org/wiki/Bookmarklet):
