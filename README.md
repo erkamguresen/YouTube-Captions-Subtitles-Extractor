@@ -20,6 +20,8 @@ https://www.youtube.com/api/timedtext?v={$videoID}&type=list
 -And working versions
 http://video.google.com/timedtext?v={$videoID}&lang={$lang_code}&name={$name}
 
+https://www.nicesnippets.com/blog/youtube-videos-download-source-code
+
 ## Bookmarklet
 
 [Bookmarklet-wiki](https://en.wikipedia.org/wiki/Bookmarklet):
