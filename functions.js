@@ -44,13 +44,20 @@ function dividedWindow() {
 
     // make grid 2fr 1 fr
     let body = document.body;
-    body.style.cssText =
+    body.style.width = "100%";
+    body.style.height = "100vh";
+    body.style.border = "2px solid yellowgreen";
+    body.style.padding = "10px";
+    body.style.display = "grid";
+    body.style.gridTemplateColumns = "2fr 1fr";
+
+    /*cssText =
       "width:100%;" +
       "height:100vh;" +
-      "border: 2px solid yellowgreen;" +
+      "border: ;" +
       "padding:10px;" +
       "display:grid; " +
-      "grid-template-columns:2fr 1fr";
+      "grid-template-columns:2fr 1fr";*/
 
     //alert
     alert("3 window will be initiated");
