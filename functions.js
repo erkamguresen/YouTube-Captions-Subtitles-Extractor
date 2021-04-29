@@ -33,9 +33,11 @@ function dividedWindow() {
     document.body.appendChild(asideDiv);
 
     //style with borders
-    asideDiv.style.cssText = "height:100%;" + "border: 2px solid red";
+    asideDiv.style.height = "height:100%";
+    asideDiv.style.border = "2px solid red";
 
-    newDiv2.style.cssText = "height:50%; border:2px solid green";
+    newDiv2.style.height = "50%";
+    newDiv2.style.border = "border:2px solid green";
 
     document.getElementById("asideUpper").style.cssText =
       "height:50%;" + "border:2px solid blue";
