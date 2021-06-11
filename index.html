@@ -47,7 +47,7 @@
          just click the bookmarklet again.
       </p>
       <p>To install the code just drag the following link to your browsers bookmarks bar  </p>
-        <p>
+        <p>----> 
           <a
             href="javascript: (function () {
               const v = document.querySelector('video');
@@ -61,9 +61,20 @@
               skipAdsButton.click();
 
             })();"
-            >🎦Ads Skip</a
-          > (Drag to bookmark)
+            > 🎦Ads Skip</a
+          > (Drag to bookmark) <----
         </p>
+        <p>The JavaScript code used in this bookmarklet is as below:</p>
+        <code>javascript: (function () { <br>
+          const v = document.querySelector('video');<br>
+          v.playbackRate = v.playbackRate != 1 ? 1 : 5;<br>
+          <br>
+          setTimeout(() => {<br>
+            warnings.innerText = '';<br>
+          }, 1000);<br>
+         const skipAdsButton = document.querySelector('.ytp-ad-skip-button');<br>
+          let isSkipped = false;<br>
+          skipAdsButton.click();<br></code>
       </div>
     </article>
 
