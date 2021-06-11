@@ -9,3 +9,8 @@ javascript: (function () {
   let isSkipped = false;
   skipAdsButton.click();
 })();
+
+javascript: (function () {
+  var v = document.querySelector('video');
+  v.playbackRate = v.playbackRate != 1 ? 1 : 3;
+})();
