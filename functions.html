@@ -176,6 +176,49 @@ if (asideDiv.length === 0) {
         value="3 part view with iFrame"
         onclick="dividedWindowWithIFrame()"
       />
+
+      <div>
+        <p>
+          <a
+            href="javascript: (function () {
+              const v = document.querySelector('video');
+              v.playbackRate = v.playbackRate != 1 ? 1 : 5;
+            
+              let isSkipped = false;
+              while (!isSkipped) {
+                try {
+                  const skipAdsButton = document.querySelector('.ytp-ad-skip-button');
+            
+                  if (Array.isArray(skipAdsButton) && skipAdsButton.length) {
+                                skipAdsButton.click();
+                  }
+                } catch (error) {
+                  console.log(error);
+                }
+              }
+            })();"
+            >Speed & skip</a
+          >(Drag to bookmark)
+        </p>
+      </div>
+
+      <div>
+        <p>
+          <a
+            href="javascript: (function () {
+
+            const skipAdsButton = document.querySelector('.ytp-ad-skip-button');
+            console.log(skipAdsButton);
+            
+            skipAdsButton.click();
+
+        
+            })();"
+          >
+            skip</a
+          >(Drag to bookmark)
+        </p>
+      </div>
     </div>
   </body>
 </html>
