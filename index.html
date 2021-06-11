@@ -8,12 +8,12 @@
   </head>
   <body>
     <header>
-      <h1>YouTube Captions(Subtitles) Extractor</h1>
+      <!-- <h1>YouTube Captions(Subtitles) Extractor</h1>
       <p>
         This is a small Bookmarklet that extracts captions from a YouTube Video
         (if exists) and opens a panel on the right side of the page to display
         all the captions.
-      </p>
+      </p> -->
     </header>
     <main>
       <h2>
@@ -32,5 +32,28 @@
         text and display a search engine results page
         (<a href="https://en.wikipedia.org/wiki/Bookmarklet"></a>wikipedia</a>).</p>
     </main>
+    <article>
+      <div>
+        <h3>A Bookmarklet example for skipping Ads in a Video</h3>
+        <p>
+          <a
+            href="javascript: (function () {
+              const v = document.querySelector('video');
+              v.playbackRate = v.playbackRate != 1 ? 1 : 5;
+
+              setTimeout(() => {
+                warnings.innerText = '';
+              }, 1000);
+             const skipAdsButton = document.querySelector('.ytp-ad-skip-button');
+              let isSkipped = false;
+              skipAdsButton.click();
+
+            })();"
+            >🎦Ads Skip</a
+          >(Drag to bookmark)
+        </p>
+      </div>
+    </article>
+
   </body>
 </html>
