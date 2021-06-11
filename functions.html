@@ -183,39 +183,16 @@ if (asideDiv.length === 0) {
             href="javascript: (function () {
               const v = document.querySelector('video');
               v.playbackRate = v.playbackRate != 1 ? 1 : 5;
-            
+
+              setTimeout(() => {
+                warnings.innerText = '';
+              }, 1000);
+             const skipAdsButton = document.querySelector('.ytp-ad-skip-button');
               let isSkipped = false;
-              while (!isSkipped) {
-                try {
-                  const skipAdsButton = document.querySelector('.ytp-ad-skip-button');
-            
-                  if (Array.isArray(skipAdsButton) && skipAdsButton.length) {
-                                skipAdsButton.click();
-                  }
-                } catch (error) {
-                  console.log(error);
-                }
-              }
+              skipAdsButton.click();
+
             })();"
             >Speed & skip</a
-          >(Drag to bookmark)
-        </p>
-      </div>
-
-      <div>
-        <p>
-          <a
-            href="javascript: (function () {
-
-            const skipAdsButton = document.querySelector('.ytp-ad-skip-button');
-            console.log(skipAdsButton);
-            
-            skipAdsButton.click();
-
-        
-            })();"
-          >
-            skip</a
           >(Drag to bookmark)
         </p>
       </div>
