@@ -16,67 +16,102 @@
       </p> -->
     </header>
     <main>
-      <h2>
-        Bookmarklet
-      </h2>
-      <p>A bookmarklet is a bookmark stored in a web
-        browser that contains JavaScript commands that add new features to the
-        browser. Bookmarklets are unobtrusive JavaScripts stored as the URL of a
-        bookmark in a web browser or as a hyperlink on a web page. Bookmarklets
-        are usually JavaScript programs. Regardless of whether bookmarklet
-        utilities are stored as bookmarks or hyperlinks, they add one-click
-        functions to a browser or web page. When clicked, a bookmarklet performs
-        one of a wide variety of operations, such as running a search query or
-        extracting data from a table. For example, clicking on a bookmarklet after
-        selecting text on a webpage could run an Internet search on the selected
-        text and display a search engine results page
-        (<a href="https://en.wikipedia.org/wiki/Bookmarklet"></a>wikipedia</a>).</p>
+      <h2>Bookmarklet</h2>
+      <p>
+        A bookmarklet is a bookmark stored in a web browser that contains
+        JavaScript commands that add new features to the browser. Bookmarklets
+        are unobtrusive JavaScripts stored as the URL of a bookmark in a web
+        browser or as a hyperlink on a web page. Bookmarklets are usually
+        JavaScript programs. Regardless of whether bookmarklet utilities are
+        stored as bookmarks or hyperlinks, they add one-click functions to a
+        browser or web page. When clicked, a bookmarklet performs one of a wide
+        variety of operations, such as running a search query or extracting data
+        from a table. For example, clicking on a bookmarklet after selecting
+        text on a webpage could run an Internet search on the selected text and
+        display a search engine results page (<a
+          href="https://en.wikipedia.org/wiki/Bookmarklet"
+          >wikipedia</a
+        >).
+      </p>
     </main>
     <article>
       <div>
         <h3>A Bookmarklet example for skipping Ads in a Video</h3>
-        <p>This bookmarklet is produced only for education purposes. 
-          It works as like a button in the bookmarks section. 
-          While you are in a video streaming platform like YouTube, 
-          you can click the bookmarklet. 
-          When you click the bookmarklet it speeds the video 
-          and clicks the "skip" button for you.
-        If you click while normal video is playing 
-        (not while ads are playing) the current video will play very fast. 
-        To slow down the video back to normal playback speed
-         just click the bookmarklet again.
-      </p>
-      <p>To install the code just drag the following link to your browsers bookmarks bar  </p>
-        <p>----> 
+        <p>
+          This bookmarklet is produced only for education purposes. It works as
+          like a button in the bookmarks section. While you are in a video
+          streaming platform like YouTube, you can click the bookmarklet. When
+          you click the bookmarklet it speeds the video and clicks the "skip"
+          button for you. If you click while normal video is playing (not while
+          ads are playing) the current video will play very fast. To slow down
+          the video back to normal playback speed just click the bookmarklet
+          again.
+        </p>
+        <p>
+          Each tab /window or reloads needs new click again in the bookmark. But
+          while in the same page you can just press 'Enter' key to skip the ads.
+        </p>
+        <p>
+          To install the code just drag the following link to your browsers
+          bookmarks bar.
+        </p>
+        <p>
+          ---->
           <a
-            href="javascript: (function () {
+            href="javascript: function skipAds() {
               const v = document.querySelector('video');
               v.playbackRate = v.playbackRate != 1 ? 1 : 5;
-
+            
               setTimeout(() => {
                 warnings.innerText = '';
               }, 1000);
-             const skipAdsButton = document.querySelector('.ytp-ad-skip-button');
-              let isSkipped = false;
+              const skipAdsButton = document.querySelector('.ytp-ad-skip-button');
+            
               skipAdsButton.click();
-
+            }
+            
+            (function () {
+              skipAds();
+            
+              document.onkeyup = function (event) {
+                let e = event || window.event;
+                if (e.key === 'Enter') {
+                  skipAds();
+                }
+              };
             })();"
-            > 🎦Ads Skip</a
-          > (Drag to bookmark) <----
+          >
+            🎦Ads Skip</a
+          >
+          (Drag to bookmark) <----
         </p>
         <p>The JavaScript code used in this bookmarklet is as below:</p>
-        <code>javascript: (function () { <br>
-          const v = document.querySelector('video');<br>
-          v.playbackRate = v.playbackRate != 1 ? 1 : 5;<br>
-          <br>
-          setTimeout(() => {<br>
-            warnings.innerText = '';<br>
-          }, 1000);<br>
-         const skipAdsButton = document.querySelector('.ytp-ad-skip-button');<br>
-          let isSkipped = false;<br>
-          skipAdsButton.click();<br></code>
+        <code>
+          javascript: function skipAds() { <br />
+          const v = document.querySelector('video');<br />
+          v.playbackRate = v.playbackRate != 1 ? 1 : 5;<br />
+          <br />
+          setTimeout(() => {<br />
+          warnings.innerText = '';<br />
+          }, 1000);<br />
+          const skipAdsButton =
+          document.querySelector('.ytp-ad-skip-button');<br />
+          <br />
+          skipAdsButton.click();<br />
+          }<br />
+          <br />
+          (function () {<br />
+          skipAds();<br />
+          <br />
+          document.onkeyup = function (event) {<br />
+          let e = event || window.event;<br />
+          if (e.key === 'Enter') {<br />
+          skipAds();<br />
+          }<br />
+          };<br />
+          })();<br />
+        </code>
       </div>
     </article>
-
   </body>
 </html>
