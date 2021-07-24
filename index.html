@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <title>YouTube Captions(Subtitles) Extractor</title>
   </head>
   <body>
-    <header>
+    <header class="container my-3 p-3">
       <!-- <h1>YouTube Captions(Subtitles) Extractor</h1>
       <p>
         This is a small Bookmarklet that extracts captions from a YouTube Video
@@ -15,7 +21,7 @@
         all the captions.
       </p> -->
     </header>
-    <main>
+    <main class="container my-3 p-3 border border-secondry border-1">
       <h2>Bookmarklet</h2>
       <p>
         A bookmarklet is a bookmark stored in a web browser that contains
@@ -34,7 +40,7 @@
         >).
       </p>
     </main>
-    <article>
+    <article class="container my-3 p-3 border border-secondry border-1">
       <div>
         <h3>A Bookmarklet example for skipping Ads in a Video</h3>
         <p>
@@ -55,62 +61,122 @@
           To install the code just drag the following link to your browsers
           bookmarks bar.
         </p>
-        <p>
-          ---->
-          <a
-            href="javascript: function skipAds() {
-              const v = document.querySelector('video');
-              v.playbackRate = v.playbackRate != 1 ? 1 : 5;
-            
-              setTimeout(() => {
-                warnings.innerText = '';
-              }, 1000);
-              const skipAdsButton = document.querySelector('.ytp-ad-skip-button');
-            
-              skipAdsButton.click();
-            }
-            
-            (function () {
-              skipAds();
-            
-              document.onkeyup = function (event) {
-                let e = event || window.event;
-                if (e.key === 'Enter') {
-                  skipAds();
+        <div
+          class="container my-3 p-3 border border-secondry border-2 text-center"
+        >
+          <p>
+            ---->
+            <a
+              href="javascript: function skipAds() {
+                const video = document.querySelector('video');
+              
+                const skipAdsButton = document.querySelector('.ytp-ad-skip-button');
+                const smallAdsButton = document.querySelector('.ytp-ad-overlay-close-button');
+              
+                if (skipAdsButton) {
+                  video.playbackRate = video.playbackRate != 1 ? 1 : 5;
+              
+                  setTimeout(() => {
+                    warnings.innerText = '';
+                  }, 1000);
+              
+                  skipAdsButton.click();
                 }
-              };
-            })();"
-          >
-            🎦 Skip Ads: Enter
-          </a>
-          (Drag to bookmark) <----
-        </p>
+              
+                if (smallAdsButton) {
+                  smallAdsButton.click();
+                }
+              }
+              
+              (function () {
+                skipAds();
+              
+                document.onkeyup = function (event) {
+                  const video = document.querySelector('video');
+                  let e = event || window.event;
+              
+                  if (e.key === 'Enter' && e.ctrlKey) {
+                    skipAds();
+                    video.playbackRate = 1;
+                  }
+              
+                  if (e.key === '+') {
+                    video.playbackRate += 0.25;
+                  }
+              
+                  if (e.key === '-' && video.playbackRate > 0.25) {
+                    video.playbackRate -= 0.25;
+                  }
+              
+                  if (e.key === '0' && e.ctrlKey) {
+                    video.playbackRate = 1;
+                  }
+                };
+              })();
+              
+              "
+            >
+              🎦 Skip Ads: Enter
+            </a>
+            (Drag to bookmark) <----
+          </p>
+        </div>
         <p>The JavaScript code used in this bookmarklet is as below:</p>
-        <code>
-          javascript: function skipAds() { <br />
-          const v = document.querySelector('video');<br />
-          v.playbackRate = v.playbackRate != 1 ? 1 : 5;<br />
-          <br />
-          setTimeout(() => {<br />
-          warnings.innerText = '';<br />
-          }, 1000);<br />
-          const skipAdsButton =
-          document.querySelector('.ytp-ad-skip-button');<br />
-          <br />
-          skipAdsButton.click();<br />
-          }<br />
-          <br />
-          (function () {<br />
-          skipAds();<br />
-          <br />
-          document.onkeyup = function (event) {<br />
-          let e = event || window.event;<br />
-          if (e.key === 'Enter') {<br />
-          skipAds();<br />
-          }<br />
-          };<br />
-          })();<br />
-        </code>
+        <div class="container my-3 border border-secondry border-2">
+          <code></br>
+            javascript: function skipAds() { </br>
+              const video = document.querySelector('video');</br>
+            </br>
+              const skipAdsButton = document.querySelector('.ytp-ad-skip-button');</br>
+              const smallAdsButton = document.querySelector('.ytp-ad-overlay-close-button');</br>
+            </br>
+              if (skipAdsButton) {</br>
+                video.playbackRate = video.playbackRate != 1 ? 1 : 5;</br>
+              </br>
+                setTimeout(() => {</br>
+                  warnings.innerText = '';</br>
+                }, 1000);</br>
+              </br>
+                skipAdsButton.click();</br>
+              }</br>
+            </br>
+              if (smallAdsButton) {</br>
+                smallAdsButton.click();</br>
+              }</br>
+            }</br>
+          </br>
+            (function () {</br>
+              skipAds();</br>
+            </br>
+              document.onkeyup = function (event) {</br>
+                const video = document.querySelector('video');</br>
+                let e = event || window.event;</br>
+              </br>
+                // ctrl + Enter to skip adds or reset video playbackRate</br>
+                if (e.key === 'Enter' && e.ctrlKey) {</br>
+                  skipAds();</br>
+                  video.playbackRate = 1;</br>
+                }</br>
+              </br>
+                // + to decrease the video playback speed</br>
+                if (e.key === '+') {</br>
+                  video.playbackRate += 0.25;</br>
+                }</br>
+              </br>
+                // - to decrease the video playback speed</br>
+                if (e.key === '-' && video.playbackRate > 0.25) {</br>
+                  video.playbackRate -= 0.25;</br>
+                }</br>
+              </br>
+                // Alt + Ctrl to reset the video speed</br>
+                if (e.key === '0' && e.ctrlKey) {</br>
+                  video.playbackRate = 1;</br>
+                }</br>
+              };</br>
+            })();</br>
+          </br>
+          </code>
+        </div>
       </div>
     </article>
   </body>
