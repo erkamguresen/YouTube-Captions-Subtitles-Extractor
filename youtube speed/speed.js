@@ -42,7 +42,7 @@ function skipAds() {
       video.playbackRate -= 0.25;
     }
 
-    // Alt + Ctrl to reset the video speed
+    // Ctrl + 0 to reset the video speed
     if (e.key === '0' && e.ctrlKey) {
       video.playbackRate = 1;
     }

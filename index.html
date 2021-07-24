@@ -10,6 +10,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
     <title>YouTube Captions(Subtitles) Extractor</title>
   </head>
   <body>
@@ -22,7 +23,7 @@
       </p> -->
     </header>
     <main class="container my-3 p-3 border border-secondry border-1">
-      <h2>Bookmarklet</h2>
+      <h1 class='text-center'>Bookmarklet</h1>
       <p>
         A bookmarklet is a bookmark stored in a web browser that contains
         JavaScript commands that add new features to the browser. Bookmarklets
@@ -42,7 +43,7 @@
     </main>
     <article class="container my-3 p-3 border border-secondry border-1">
       <div>
-        <h3>A Bookmarklet example for skipping Ads in a Video</h3>
+        <h2 class='text-center mb-3'>A Bookmarklet example for skipping Ads in a Video</h2>
         <p>
           This bookmarklet is produced only for education purposes. It works as
           like a button in the bookmarks section. While you are in a video
@@ -57,10 +58,14 @@
           Each tab /window or reloads needs new click again in the bookmark. But
           while in the same page you can just press 'Enter' key to skip the ads.
         </p>
+
+        <h3 class='text-center mb-3'>How to install?</h3>
+
         <p>
           To install the code just drag the following link to your browsers
           bookmarks bar.
         </p>
+
         <div
           class="container my-3 p-3 border border-secondry border-2 text-center"
         >
@@ -120,6 +125,17 @@
             </a>
             (Drag to bookmark) <----
           </p>
+
+          <h3 class='text-center mb-3'>Key combinations</h3>
+          
+          <p>Other key combinations are as follows:</p>
+          <ul>
+              <li><strong>Ctrl + Enter :</strong> skips the ads (full screen or popup) and resets the player speed.</li>
+              <li> <strong>"+" :</strong> increases the player speed.</li>
+              <li> <strong>"-" :</strong> decreases the player speed.</li>
+              <li>  <strong>Ctrl + "0" :</strong> resets the player speed.</li>             
+            </ul>
+
         </div>
         <p>The JavaScript code used in this bookmarklet is as below:</p>
         <div class="container my-3 border border-secondry border-2">
@@ -168,7 +184,7 @@
                   video.playbackRate -= 0.25;</br>
                 }</br>
               </br>
-                // Alt + Ctrl to reset the video speed</br>
+                // Ctrl + 0 to reset the video speed</br>
                 if (e.key === '0' && e.ctrlKey) {</br>
                   video.playbackRate = 1;</br>
                 }</br>
