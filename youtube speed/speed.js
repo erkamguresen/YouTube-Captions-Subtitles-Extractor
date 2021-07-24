@@ -4,9 +4,9 @@ function skipAds() {
   const skipAdsButton = document.querySelector('.ytp-ad-skip-button');
   const smallAdsButton = document.querySelector('.ytp-ad-overlay-close-button');
 
-  video.playbackRate = video.playbackRate != 1 ? 1 : 5;
-
   if (skipAdsButton) {
+    video.playbackRate = video.playbackRate != 1 ? 1 : 5;
+
     setTimeout(() => {
       warnings.innerText = '';
     }, 1000);
